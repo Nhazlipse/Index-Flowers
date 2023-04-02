@@ -1,0 +1,30 @@
+name: Memekaru
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 * * *" # See https://crontab.guru/#0_7,9,11,17,20_*_*_*
+jobs:
+  auto_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Modify Nhazlipse file
+        run: |
+          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          echo $d > Nhazlipse
+      - name: Commit changes
+        run: |
+          git config --local user.email "nhazlipse@gmail.com"
+          git config --local user.name "nhazlipse"
+          git commit -a -m "Nhazlipse"
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          force: true
+          directory: '.'
+          github_token: ${{ secrets.GITHUB_TOKEN }}

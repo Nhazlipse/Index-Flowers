@@ -6,7 +6,7 @@ how to run :
 2. open index.html with ur browser
 
 
-<img src="img/preview.jpg" alt="flowers">
+<img src="img/preview.png" alt="flowers">
 
 
 #Nhazlipse

@@ -5,4 +5,8 @@ how to run :
 1. download this repo
 2. open index.html with ur browser
 
+
+<img src="img/preview.jpg" alt="flowers">
+
+
 #Nhazlipse
